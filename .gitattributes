@@ -1,0 +1,4 @@
+* text=auto
+
+*.ahk      text eol=crlf
+*.ahk.dist text eol=crlf
