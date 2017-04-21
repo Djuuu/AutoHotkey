@@ -60,3 +60,6 @@ Return
 
 ;;; {Tab}  -  Move mouse to other monitor
 #Include %A_ScriptDir%\MouseSwitchMonitor.ahk
+
+;;; {#}  -  Numpad emulation
+#Include %A_ScriptDir%\NumpadEmulation.ahk
