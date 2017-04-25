@@ -12,9 +12,26 @@ Capslock & Del::Send 1
 Capslock & End::Send 2
 Capslock & PgDn::Send 3
 
-Capslock & Left::Send 0
+Capslock & Up::
+	If (GetKeyState("Shift", "P"))
+         Send {+}
+	Else Send {,}
+Return
 
-Capslock & Up::Send {+}
-Capslock & Down::Send -
+Capslock & Down::
+	If (GetKeyState("Shift", "P"))
+         Send -
+	Else Send {.}
+Return
 
-Capslock & Right::Send {Enter}
+Capslock & Left::
+	If (GetKeyState("Shift", "P"))
+         Send /
+	Else Send 0
+Return
+
+Capslock & Right::
+	If (GetKeyState("Shift", "P"))
+         Send *
+	Else Send {Enter}
+Return
