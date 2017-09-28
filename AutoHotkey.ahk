@@ -47,24 +47,9 @@ Return
 
 ;;;;;;;;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;
 
-;;; {P}  -  Politeness e-mail template
-Capslock & p::
-    Send Bonjour,{enter}{enter}{enter}{enter}Cordialement, {up}{up}
-Return
-
-;;; {Y}  -  ¯\_(ツ)_/¯
-Capslock & y::
-    Send ¯\_(ツ)_/¯
-Return
-
-;;; {^$ù*}  -  qwerty bits (brackets, braces)
-#Include %A_ScriptDir%\QwertyBits.ahk
-
-;;; {hjkl}  -  pseudo-vi navigation
-#Include %A_ScriptDir%\PseudoViNavigation.ahk
-
-;;; {Tab}  -  Move mouse to other monitor
-#Include %A_ScriptDir%\MouseSwitchMonitor.ahk
-
-;;; {#}  -  Numpad emulation
-#Include %A_ScriptDir%\NumpadEmulation.ahk
+#Include %A_ScriptDir%\QwertyBits.ahk                   ;;; {^$ù*}  -  qwerty bits (brackets, braces)
+#Include %A_ScriptDir%\PseudoViNavigation.ahk           ;;; {hjkl}  -  pseudo-vi navigation
+#Include %A_ScriptDir%\MouseSwitchMonitor.ahk           ;;; {Tab}   -  Move mouse to other monitor
+#Include %A_ScriptDir%\NumpadEmulation.ahk              ;;; {#}     -  Numpad emulation
+#Include %A_ScriptDir%\Shrug.ahk                        ;;; {Y}     -  ¯\_(ツ)_/¯
+#Include %A_ScriptDir%\BonjourCordialement.ahk          ;;; {P}     -  Politeness e-mail template
