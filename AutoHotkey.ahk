@@ -40,6 +40,11 @@ DoReload:
     IfMsgBox, Yes, Edit
 Return
 
+;;;;;;;;;;;;;;; Custom modifiers ;;;;;;;;;;;;;;;
+
+;;; {AltGr} + {;}  -  Interpunct {·}
+#Include %A_ScriptDir%\Interpunct.ahk
+
 ;;;;;;;;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;
 
 ;;; {P}  -  Politeness e-mail template
