@@ -47,6 +47,7 @@ Return
 
 ;;;;;;;;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;
 
+#Include %A_ScriptDir%\UppercaseAccentedCharacters.ahk  ;;; {éèçà}  -  Uppercase accented characters {ÉÈÇÀ}
 #Include %A_ScriptDir%\QwertyBits.ahk                   ;;; {^$ù*}  -  qwerty bits (brackets, braces)
 #Include %A_ScriptDir%\PseudoViNavigation.ahk           ;;; {hjkl}  -  pseudo-vi navigation
 #Include %A_ScriptDir%\MouseSwitchMonitor.ahk           ;;; {Tab}   -  Move mouse to other monitor
