@@ -54,4 +54,5 @@ Return
 #Include %A_ScriptDir%\NumpadEmulation.ahk              ;;; {#}     -  Numpad emulation
 #Include %A_ScriptDir%\Shrug.ahk                        ;;; {Y}     -  ¯\_(ツ)_/¯
 #Include %A_ScriptDir%\BonjourCordialement.ahk          ;;; {P}     -  Politeness e-mail template
-#Include %A_ScriptDir%\Ballot.ahk                       ;;; {xcv}   -  Ballot box ☒ ☐ ☑ 
+#Include %A_ScriptDir%\CurrentDate.ahk                  ;;; {DT}    -  Current date/time
+#Include %A_ScriptDir%\Ballot.ahk                       ;;; {xcv}   -  Ballot box ☒ ☐ ☑
