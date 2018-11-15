@@ -2,13 +2,14 @@
 
 ; http://www.autohotkey.com/board/topic/13404-google-search-on-highlighted-text/
 
-;;; TODO : fix auto-execute
+SendMode Input
 
-SendMode Input 
-RegRead, OutputVar, HKEY_CLASSES_ROOT, http\shell\open\command 
-StringReplace, OutputVar, OutputVar," 
-SplitPath, OutputVar,,OutDir,,OutNameNoExt, OutDrive 
-browser=%OutDir%\%OutNameNoExt%.exe 
+RegRead, ProgID, HKEY_CURRENT_USER, Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http\UserChoice, Progid
+Browser := "iexplore.exe"
+If InStr(ProgID, "FirefoxURL")
+    Browser := "firefox.exe"
+If InStr(ProgID, "ChromeHTML")
+    Browser := "chrome.exe"
 
 ²:: 
 { 
