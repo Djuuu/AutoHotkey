@@ -40,19 +40,17 @@ DoReload:
     IfMsgBox, Yes, Edit
 Return
 
-;;;;;;;;;;;;;;; Custom modifiers ;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; AltGr special characters ;;;;;;;;;;;;;;;
 
-;;; {AltGr} + {;}  -  Interpunct {·}
-#Include %A_ScriptDir%\Interpunct.ahk
+#Include %A_ScriptDir%\SpecialCharacters.ahk    ;;; {éèçà...} - Uppercase accented characters, etc.
 
 ;;;;;;;;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;
 
-#Include %A_ScriptDir%\UppercaseAccentedCharacters.ahk  ;;; {éèçà}  -  Uppercase accented characters {ÉÈÇÀ}
-#Include %A_ScriptDir%\QwertyBits.ahk                   ;;; {^$ù*}  -  qwerty bits (brackets, braces)
-#Include %A_ScriptDir%\PseudoViNavigation.ahk           ;;; {hjkl}  -  pseudo-vi navigation
-#Include %A_ScriptDir%\MouseSwitchMonitor.ahk           ;;; {Tab}   -  Move mouse to other monitor
-#Include %A_ScriptDir%\NumpadEmulation.ahk              ;;; {#}     -  Numpad emulation
-#Include %A_ScriptDir%\Shrug.ahk                        ;;; {Y}     -  ¯\_(ツ)_/¯
-#Include %A_ScriptDir%\BonjourCordialement.ahk          ;;; {P}     -  Politeness e-mail template
-#Include %A_ScriptDir%\CurrentDate.ahk                  ;;; {DT}    -  Current date/time
-#Include %A_ScriptDir%\Ballot.ahk                       ;;; {xcv}   -  Ballot box ☒ ☐ ☑
+#Include %A_ScriptDir%\QwertyBits.ahk           ;;; {^$ù*}  -  qwerty bits (brackets, braces)
+#Include %A_ScriptDir%\PseudoViNavigation.ahk   ;;; {hjkl}  -  pseudo-vi navigation
+#Include %A_ScriptDir%\MouseSwitchMonitor.ahk   ;;; {Tab}   -  Move mouse to other monitor
+#Include %A_ScriptDir%\NumpadEmulation.ahk      ;;; {#}     -  Numpad emulation
+#Include %A_ScriptDir%\Shrug.ahk                ;;; {Y}     -  ¯\_(ツ)_/¯
+#Include %A_ScriptDir%\BonjourCordialement.ahk  ;;; {P}     -  Politeness e-mail template
+#Include %A_ScriptDir%\CurrentDate.ahk          ;;; {DT}    -  Current date/time
+#Include %A_ScriptDir%\Ballot.ahk               ;;; {xcv}   -  Ballot box ☒ ☐ ☑
