@@ -24,7 +24,10 @@ SetScrollLockState, AlwaysOff
 ;;;;;;;;;;;;;;; One key shortcuts ;;;;;;;;;;;;;;;
 
 ;;; {²}  -  Google Search
-#Include %A_ScriptDir%\GoogleSearch.ahk
+;#Include %A_ScriptDir%\GoogleSearch.ahk
+
+;;; {²}  -  Non-dead Backtick key
+#Include %A_ScriptDir%\Backtick.ahk
 
 ;;;;;;;;;;;;;;; Program shortcuts ;;;;;;;;;;;;;;;
 #n::Run Notepad
