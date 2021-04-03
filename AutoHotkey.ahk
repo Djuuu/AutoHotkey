@@ -57,3 +57,11 @@ Return
 #Include %A_ScriptDir%\BonjourCordialement.ahk  ;;; {P}     -  Politeness e-mail template
 #Include %A_ScriptDir%\CurrentDate.ahk          ;;; {DT}    -  Current date/time
 #Include %A_ScriptDir%\Ballot.ahk               ;;; {xcv}   -  Ballot box ☒ ☐ ☑
+
+;;;;;;;;;;;;;;; PowerToys - FancyZones ;;;;;;;;;;;;;;;
+
+Capslock & 1::SendInput ^#!{&}
+;Capslock & 2::SendInput ^#!{é}
+Capslock & 2::SendInput ^#!{&}
+Capslock & 3::SendInput ^#!{"}
+Capslock & 4::SendInput ^#!{'}
