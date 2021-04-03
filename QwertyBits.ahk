@@ -11,3 +11,6 @@ Capslock & $::Send ]
 ; braces
 Capslock & ù::Send {{}
 Capslock & *::Send {}}
+
+; pipe
+Capslock & <::Send {|}
