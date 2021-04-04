@@ -5,6 +5,17 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Set consistent working directory
 
+;;; Tray icon management library
+;;; https://www.autohotkey.com/boards/viewtopic.php?p=9186#p9186
+#Include %A_ScriptDir%\TrayIcon.ahk
+TrayIcon_Remove_Program(sExeName)
+{
+    programIcons := TrayIcon_GetInfo(sExeName)
+    Loop % programIcons.MaxIndex() {
+        TrayIcon_Remove(programIcons[A_Index].hwnd, programIcons[A_Index].uid)
+    }
+}
+
 CoordMode, Mouse, Screen ; Mouse coordinates relative to screen
 
 #Include %A_ScriptDir%\ScreeRes.cnf.ahk ; Screen resolutions configuration
