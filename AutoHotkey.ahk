@@ -19,6 +19,7 @@ TrayIcon_Remove_Program(sExeName)
 CoordMode, Mouse, Screen ; Mouse coordinates relative to screen
 
 #Include %A_ScriptDir%\ScreeRes.cnf.ahk ; Screen resolutions configuration
+#Include %A_ScriptDir%\MonitorSource.cnf.ahk ; Alternate monitor source configuration
 
 ;;;;;;;;;;;;;;; Variables, parameters ;;;;;;;;;;;;;;;
 
@@ -86,4 +87,10 @@ Capslock & f::
         TrayIcon_Remove_Program("LeDimmer.exe")
         Process, Close, LeDimmer.exe
     }
+Return
+
+;;;;;;;;;;;;;;; Monitor source ;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\SetMonitorSource.ahk
+Pause::
+    setMonitorSource(AlternateMonitorSource)
 Return
