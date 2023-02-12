@@ -61,14 +61,19 @@ Return
 
 ;;;;;;;;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;
 
-#Include %A_ScriptDir%\QwertyBits.ahk           ;;; {^$ù*}  -  qwerty bits (brackets, braces)
-#Include %A_ScriptDir%\PseudoViNavigation.ahk   ;;; {hjkl}  -  pseudo-vi navigation
-#Include %A_ScriptDir%\MouseSwitchMonitor.ahk   ;;; {Tab}   -  Move mouse to other monitor
-#Include %A_ScriptDir%\NumpadEmulation.ahk      ;;; {#}     -  Numpad emulation
-#Include %A_ScriptDir%\Shrug.ahk                ;;; {Y}     -  ¯\_(ツ)_/¯
-#Include %A_ScriptDir%\BonjourCordialement.ahk  ;;; {P}     -  Politeness e-mail template
-#Include %A_ScriptDir%\CurrentDate.ahk          ;;; {DT}    -  Current date/time
-#Include %A_ScriptDir%\Ballot.ahk               ;;; {xcv}   -  Ballot box ☒ ☐ ☑
+#Include %A_ScriptDir%\QwertyBits.ahk           ;;; {^$ù*}    -  qwerty bits (brackets, braces)
+#Include %A_ScriptDir%\PseudoViNavigation.ahk   ;;; {hjkl}    -  pseudo-vi navigation
+#Include %A_ScriptDir%\MouseSwitchMonitor.ahk   ;;; {Tab}     -  Move mouse to other monitor
+#Include %A_ScriptDir%\NumpadEmulation.ahk      ;;; {#}       -  Numpad emulation
+#Include %A_ScriptDir%\Shrug.ahk                ;;; {Y}       -  ¯\_(ツ)_/¯
+#Include %A_ScriptDir%\BonjourCordialement.ahk  ;;; {P}       -  Politeness e-mail template
+#Include %A_ScriptDir%\CurrentDate.ahk          ;;; {DT}      -  Current date/time
+#Include %A_ScriptDir%\Ballot.ahk               ;;; {xcv}     -  Ballot box ☒ ☐ ☑
+#Include %A_ScriptDir%\F13-F24.ahk              ;;; {F1-F12}  -  F13-F24
+
+;;;;;;;;;;;;;;; PhpStorm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+#Include %A_ScriptDir%\PhpStorm.ahk
 
 ;;;;;;;;;;;;;;; PowerToys - FancyZones ;;;;;;;;;;;;;;;
 
@@ -91,6 +96,5 @@ Return
 
 ;;;;;;;;;;;;;;; Monitor source ;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\SetMonitorSource.ahk
-Pause::
-    setMonitorSource(AlternateMonitorSource)
-Return
+ScrollLock::setMonitorSource(MainMonitorSource)
+Pause::setMonitorSource(AlternateMonitorSource)
