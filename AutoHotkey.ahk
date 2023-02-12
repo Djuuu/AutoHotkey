@@ -1,4 +1,4 @@
-﻿;;;;;;;;;;;;;;; Init ;;;;;;;;;;;;;;;
+﻿;;;;;;;; Init ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #SingleInstance force  ; Force singleinstance
@@ -21,31 +21,20 @@ CoordMode, Mouse, Screen ; Mouse coordinates relative to screen
 #Include %A_ScriptDir%\ScreeRes.cnf.ahk ; Screen resolutions configuration
 #Include %A_ScriptDir%\MonitorSource.cnf.ahk ; Alternate monitor source configuration
 
-;;;;;;;;;;;;;;; Variables, parameters ;;;;;;;;;;;;;;;
+;;;;;;;; Variables, parameters ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-RegRead, OutputVar, HKEY_CLASSES_ROOT, http\shell\open\command 
-StringReplace, OutputVar, OutputVar," 
-SplitPath, OutputVar,,OutDir,,OutNameNoExt, OutDrive 
-browser=%OutDir%\%OutNameNoExt%.exe 
+RegRead, browser_path, HKEY_CLASSES_ROOT, http\shell\open\command
+StringReplace, browser_path, browser_path,"
+SplitPath, browser_path,,browser_dir,,browser_name, browser_drive
+browser=%browser_dir%\%browser_name%.exe
 
-;;;;;;;;;;;;;;; Fixed states ;;;;;;;;;;;;;;;
+;;;;;;;; Fixed states ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 SetCapsLockState, AlwaysOff
 SetNumLockState, AlwaysOn
 SetScrollLockState, AlwaysOff
 
-;;;;;;;;;;;;;;; One key shortcuts ;;;;;;;;;;;;;;;
-
-;;; {²}  -  Google Search
-;#Include %A_ScriptDir%\GoogleSearch.ahk
-
-;;; {²}  -  Non-dead Backtick key
-#Include %A_ScriptDir%\Backtick.ahk
-
-;;;;;;;;;;;;;;; Program shortcuts ;;;;;;;;;;;;;;;
-#n::Run Notepad
-#c::Run Calc
-
-;;;;;;;;;;;;;;; AutoHotkey reload ;;;;;;;;;;;;;;;
+;;;;;;;; AutoHotkey reload ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Capslock & R::GoSub DoReload
 DoReload:
@@ -55,46 +44,40 @@ DoReload:
     IfMsgBox, Yes, Edit
 Return
 
-;;;;;;;;;;;;;;; AltGr special characters ;;;;;;;;;;;;;;;
+
+;;;;;;;; One key shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; {²}  -  Google Search
+;#Include %A_ScriptDir%\GoogleSearch.ahk
+
+;;; {²}  -  Non-dead Backtick key
+#Include %A_ScriptDir%\Backtick.ahk
+
+;;;;;;;; AltGr special characters ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 #Include %A_ScriptDir%\SpecialCharacters.ahk    ;;; {éèçà...} - Uppercase accented characters, etc.
 
-;;;;;;;;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;
+;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-#Include %A_ScriptDir%\QwertyBits.ahk           ;;; {^$ù*}    -  qwerty bits (brackets, braces)
-#Include %A_ScriptDir%\PseudoViNavigation.ahk   ;;; {hjkl}    -  pseudo-vi navigation
-#Include %A_ScriptDir%\MouseSwitchMonitor.ahk   ;;; {Tab}     -  Move mouse to other monitor
-#Include %A_ScriptDir%\NumpadEmulation.ahk      ;;; {#}       -  Numpad emulation
-#Include %A_ScriptDir%\Shrug.ahk                ;;; {Y}       -  ¯\_(ツ)_/¯
-#Include %A_ScriptDir%\BonjourCordialement.ahk  ;;; {P}       -  Politeness e-mail template
-#Include %A_ScriptDir%\CurrentDate.ahk          ;;; {DT}      -  Current date/time
-#Include %A_ScriptDir%\Ballot.ahk               ;;; {xcv}     -  Ballot box ☒ ☐ ☑
-#Include %A_ScriptDir%\F13-F24.ahk              ;;; {F1-F12}  -  F13-F24
+#Include %A_ScriptDir%\CurrentDate.ahk         ;;; {DT}        - Current date/time
+#Include %A_ScriptDir%\F13-F24.ahk             ;;; {F1-F12}    - F13-F24
+#Include %A_ScriptDir%\MouseSwitchMonitor.ahk  ;;; {Tab}       - Move mouse to other monitor
+#Include %A_ScriptDir%\QwertyBits.ahk          ;;; {^$ù*}      - qwerty bits (brackets, braces)
+#Include %A_ScriptDir%\Symbols.ahk             ;;; {wxcvhgmny} - Symbols ⚠️ ❌ ☒ x ✔️ ☑ 🗸  ⌛ ⌛ ⏳ 🎸 🎶 🎵 ¯\_(ツ)_/¯
 
-;;;;;;;;;;;;;;; PhpStorm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; Program shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+#Include %A_ScriptDir%\FancyZones.ahk
+#Include %A_ScriptDir%\LeDimmer.ahk
 #Include %A_ScriptDir%\PhpStorm.ahk
 
-;;;;;;;;;;;;;;; PowerToys - FancyZones ;;;;;;;;;;;;;;;
+;;;;;;;; Monitor source ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-Capslock & 1::SendInput ^#!{&}
-;Capslock & 2::SendInput ^#!{é}
-Capslock & 2::SendInput ^#!{&}
-Capslock & 3::SendInput ^#!{"}
-Capslock & 4::SendInput ^#!{'}
-
-;;;;;;;;;;;;;;; Focus ;;;;;;;;;;;;;;;
-Capslock & f::
-    If (!GetKeyState("Shift", "P")) {
-        Run %A_ProgramFiles%\LeDimmer\LeDimmer.exe -alpha 225 -hideOnDesktop
-        Send #{Home}
-    } Else {
-        TrayIcon_Remove_Program("LeDimmer.exe")
-        Process, Close, LeDimmer.exe
-    }
-Return
-
-;;;;;;;;;;;;;;; Monitor source ;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\SetMonitorSource.ahk
 ScrollLock::setMonitorSource(MainMonitorSource)
 Pause::setMonitorSource(AlternateMonitorSource)
+
+;;;;;;;; Program launch shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+#n::Run Notepad
+#c::Run Calc
