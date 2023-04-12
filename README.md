@@ -1,12 +1,39 @@
 # AutoHotkey
-My AutoHotkey scripts
+
+My [AutoHotkey](https://www.autohotkey.com/) v2 scripts
+
+## Scripts
 
 
-## Install
+* `Install.ahk`  
+  Installs local configuration file if it doesn't exist.
 
-```bash
-cp  ScreeRes.cnf.ahk.dist  ScreeRes.cnf.ahk
+* `AutoHotkey.ahk`  
+  Main script.
+
+## Configuration
+
+`config.local.ahk`
+
+```autohotkey
+;;; Screen resolution configuration
+ResolutionXLeft := -1920
+ResolutionYLeft := 1080
+ResolutionXRight := 1920
+ResolutionYRight := 1080
+
+;;; Alternate monitor source configuration
+; Value depends on your monitor brand & model
+; This tool can help: https://www.nirsoft.net/utils/control_my_monitor.html
+AlternateMonitorSource := 1
+
+;;; Default search URL
+defaultSearchUrl := "https://duckduckgo.com/?q="
+;defaultSearchUrl := "https://www.google.com/search?q="
+;defaultSearchUrl := "https://www.bing.com/search?q="
+;defaultSearchUrl := "https://www.qwant.com/?q="
 ```
-Adapt your screen resolutions in `ScreeRes.cnf.ahk` for [`MouseSwitchMonitor.ahk`](MouseSwitchMonitor.ahk). 
 
-(Note: you might need negative values depending on your screens disposition)
+## Documentation
+
+* [AutoHotkey v2 documentation](https://www.autohotkey.com/docs/v2/)
