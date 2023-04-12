@@ -3,8 +3,6 @@
 #Include <Monitor>   ;;; Monitor config class
 #Include <JXON>      ;;; JSON serializer
 
-#Include %A_ScriptDir%\MonitorSource.cnf.ahk ; Alternate monitor source configuration
-
 ;;; WIP
 setMonitorSource(source)
 {

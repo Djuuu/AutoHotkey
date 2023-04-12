@@ -9,6 +9,9 @@ SetNumLockState "AlwaysOn"
 ;;;;;;;; AutoHotkey reload ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Capslock & R::Reload
 
+;;;;;;;; Configuration ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\config.local.ahk
+
 ;;;;;;;; General shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\shortcuts\Backtick.ahk           ;;; {²}         - Backtick (non-dead key)
 #Include %A_ScriptDir%\shortcuts\SpecialCharacters.ahk  ;;; {éèçà...}   - Uppercase accented characters, etc.

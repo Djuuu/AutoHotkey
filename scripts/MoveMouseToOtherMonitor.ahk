@@ -1,7 +1,5 @@
 ;;;;;;;;;;;;;;; Move mouse to other monitor ;;;;;;;;;;;;;;;
 
-#Include %A_ScriptDir%\ScreeRes.cnf.ahk ; Screen resolutions configuration
-
 moveMouseToOtherMonitor() {
 
 	CoordMode "Mouse", "Screen" ; Mouse coordinates relative to screen
@@ -30,4 +28,3 @@ moveMouseToOtherMonitor() {
 	MouseGetPos ,,&WinUMID
 	WinActivate "ahk_id " . WinUMID
 }
-

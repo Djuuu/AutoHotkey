@@ -1,5 +1,0 @@
-﻿; Alternate monitor source configuration
-; Value depends on your monitor brand & model
-; This tool can help: https://www.nirsoft.net/utils/control_my_monitor.html
-
-AlternateMonitorSource := 1

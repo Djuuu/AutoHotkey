@@ -1,2 +1,2 @@
-ScreeRes.cnf.ahk
-MonitorSource.cnf.ahk
+# Local configuration file
+config.local.ahk

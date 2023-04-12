@@ -1,0 +1,10 @@
+﻿;;; Screen resolution configuration
+ResolutionXLeft := -1920
+ResolutionYLeft := 1080
+ResolutionXRight := 1920
+ResolutionYRight := 1080
+
+;;; Alternate monitor source configuration
+; Value depends on your monitor brand & model
+; This tool can help: https://www.nirsoft.net/utils/control_my_monitor.html
+AlternateMonitorSource := 1
