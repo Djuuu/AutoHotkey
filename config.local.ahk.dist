@@ -8,3 +8,9 @@ ResolutionYRight := 1080
 ; Value depends on your monitor brand & model
 ; This tool can help: https://www.nirsoft.net/utils/control_my_monitor.html
 AlternateMonitorSource := 1
+
+;;; Default search URL
+defaultSearchUrl := "https://duckduckgo.com/?q="
+;defaultSearchUrl := "https://www.google.com/search?q="
+;defaultSearchUrl := "https://www.bing.com/search?q="
+;defaultSearchUrl := "https://www.qwant.com/?q="

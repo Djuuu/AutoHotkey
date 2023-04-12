@@ -33,6 +33,9 @@ Capslock & Tab::moveMouseToOtherMonitor  ;;; {Tab} - Move mouse to other monitor
 Pause::setMonitorSource(AlternateMonitorSource)  ;;; {Pause} - Toggle monitor source
 Capslock & q::setMonitorSource(AlternateMonitorSource)  ;;; TMP
 
+#Include %A_ScriptDir%\scripts\SearchSelection.ahk
+Capslock & ²::searchSelection()  ;;; {²} - Search selected text in Google
+
 ;;;;;;;; Program launch shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #c::Run "Calc"
 #n::Run "Notepad++"
