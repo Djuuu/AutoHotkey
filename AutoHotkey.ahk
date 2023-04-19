@@ -36,6 +36,9 @@ Capslock & q::setMonitorSource(AlternateMonitorSource)  ;;; TMP
 #Include %A_ScriptDir%\scripts\SearchSelection.ahk
 Capslock & ²::searchSelection()  ;;; {²} - Search selected text in Google
 
+#Include %A_ScriptDir%\scripts\SwitchApplicationWindow.ahk
+!²::switchApplicationWindow()  ;;; {Alt}{²} - Switch between windows of same application
+
 ;;;;;;;; Program launch shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #c::Run "Calc"
 #n::Run "Notepad++"
