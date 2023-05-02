@@ -30,8 +30,7 @@ Capslock & R::Reload
 Capslock & Tab::moveMouseToOtherMonitor  ;;; {Tab} - Move mouse to other monitor and activates underlying window
 
 #Include %A_ScriptDir%\scripts\SetMonitorSource.ahk
-Pause::setMonitorSource(AlternateMonitorSource)  ;;; {Pause} - Toggle monitor source
-Capslock & q::setMonitorSource(AlternateMonitorSource)  ;;; TMP
+Pause::setMonitorSource(AlternateMonitorSource, DisplayToToggle)  ;;; {Pause} - Toggle monitor source
 
 #Include %A_ScriptDir%\scripts\SearchSelection.ahk
 Capslock & ²::searchSelection()  ;;; {²} - Search selected text in Google

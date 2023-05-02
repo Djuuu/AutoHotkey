@@ -139,7 +139,7 @@ class Monitor {
 		return DISPLAY_TECHNOLOGY_TYPE[this.GetSetting("GetMonitorTechnologyType", Display)]	
 	}	
 
-		GetPowerMode(Display := ""){
+	GetPowerMode(Display := ""){
 		
 		static PowerModes := Map(
 		0x01, "On"      , 
