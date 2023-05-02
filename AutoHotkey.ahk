@@ -1,83 +1,43 @@
-﻿;;;;;;;; Init ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+﻿#Requires AutoHotkey v2.0
 
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-#SingleInstance force  ; Force singleinstance
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Set consistent working directory
-
-;;; Tray icon management library
-;;; https://www.autohotkey.com/boards/viewtopic.php?p=9186#p9186
-#Include %A_ScriptDir%\TrayIcon.ahk
-TrayIcon_Remove_Program(sExeName)
-{
-    programIcons := TrayIcon_GetInfo(sExeName)
-    Loop % programIcons.MaxIndex() {
-        TrayIcon_Remove(programIcons[A_Index].hwnd, programIcons[A_Index].uid)
-    }
-}
-
-CoordMode, Mouse, Screen ; Mouse coordinates relative to screen
-
-#Include %A_ScriptDir%\ScreeRes.cnf.ahk ; Screen resolutions configuration
-#Include %A_ScriptDir%\MonitorSource.cnf.ahk ; Alternate monitor source configuration
-
-;;;;;;;; Variables, parameters ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-RegRead, browser_path, HKEY_CLASSES_ROOT, http\shell\open\command
-StringReplace, browser_path, browser_path,"
-SplitPath, browser_path,,browser_dir,,browser_name, browser_drive
-browser=%browser_dir%\%browser_name%.exe
+#SingleInstance Force ; Skip dialog box and replace old instance automatically (similar to Reload)
 
 ;;;;;;;; Fixed states ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-SetCapsLockState, AlwaysOff
-SetNumLockState, AlwaysOn
-SetScrollLockState, AlwaysOff
+SetCapsLockState "AlwaysOff"
+SetNumLockState "AlwaysOn"
 
 ;;;;;;;; AutoHotkey reload ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Capslock & R::Reload
 
-Capslock & R::GoSub DoReload
-DoReload:
-    Reload
-    Sleep 1000 ; If successful, the reload will close this instance during the Sleep, so the line below will never be reached.
-    MsgBox, 4,, The script could not be reloaded. Would you like to open it for editing?
-    IfMsgBox, Yes, Edit
-Return
+;;;;;;;; Configuration ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\config.local.ahk
 
-
-;;;;;;;; One key shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;;; {²}  -  Google Search
-;#Include %A_ScriptDir%\GoogleSearch.ahk
-
-;;; {²}  -  Non-dead Backtick key
-#Include %A_ScriptDir%\Backtick.ahk
-
-;;;;;;;; AltGr special characters ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-#Include %A_ScriptDir%\SpecialCharacters.ahk    ;;; {éèçà...} - Uppercase accented characters, etc.
-
-;;;;;;;; Capslock pseudo-modifier ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-#Include %A_ScriptDir%\CurrentDate.ahk         ;;; {DT}        - Current date/time
-#Include %A_ScriptDir%\F13-F24.ahk             ;;; {F1-F12}    - F13-F24
-#Include %A_ScriptDir%\MouseSwitchMonitor.ahk  ;;; {Tab}       - Move mouse to other monitor
-#Include %A_ScriptDir%\QwertyBits.ahk          ;;; {^$ù*}      - qwerty bits (brackets, braces)
-#Include %A_ScriptDir%\Symbols.ahk             ;;; {wxcvhgmny} - Symbols ⚠️ ❌ ☒ x ✔️ ☑ 🗸  ⌛ ⌛ ⏳ 🎸 🎶 🎵 ¯\_(ツ)_/¯
+;;;;;;;; General shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\shortcuts\Backtick.ahk           ;;; {²}         - Backtick (non-dead key)
+#Include %A_ScriptDir%\shortcuts\SpecialCharacters.ahk  ;;; {éèçà...}   - Uppercase accented characters, etc.
+#Include %A_ScriptDir%\shortcuts\CurrentDate.ahk        ;;; {DT}        - Current date/time
+#Include %A_ScriptDir%\shortcuts\F13-F24.ahk            ;;; {F1-F12}    - F13-F24
+#Include %A_ScriptDir%\shortcuts\QwertyBits.ahk         ;;; {^$ù*}      - QWERTY bits (brackets, braces)
+#Include %A_ScriptDir%\shortcuts\Symbols.ahk            ;;; {wxcvhgmny} - Symbols ⚠️ ❌ ✔️ ⏳ 🎸 🎶 🎵 ¯\_(ツ)_/¯
 
 ;;;;;;;; Program shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\programs\FancyZones.ahk
+#Include %A_ScriptDir%\programs\LeDimmer.ahk
+#Include %A_ScriptDir%\programs\PhpStorm.ahk
 
-#Include %A_ScriptDir%\FancyZones.ahk
-#Include %A_ScriptDir%\LeDimmer.ahk
-#Include %A_ScriptDir%\PhpStorm.ahk
+;;;;;;;; Scripts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\scripts\MoveMouseToOtherMonitor.ahk
+Capslock & Tab::moveMouseToOtherMonitor  ;;; {Tab} - Move mouse to other monitor and activates underlying window
 
-;;;;;;;; Monitor source ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\scripts\SetMonitorSource.ahk
+Pause::setMonitorSource(AlternateMonitorSource, DisplayToToggle)  ;;; {Pause} - Toggle monitor source
 
-#Include %A_ScriptDir%\SetMonitorSource.ahk
-ScrollLock::setMonitorSource(MainMonitorSource)
-Pause::setMonitorSource(AlternateMonitorSource)
+#Include %A_ScriptDir%\scripts\SearchSelection.ahk
+Capslock & ²::searchSelection()  ;;; {²} - Search selected text in Google
+
+#Include %A_ScriptDir%\scripts\SwitchApplicationWindow.ahk
+!²::switchApplicationWindow()  ;;; {Alt}{²} - Switch between windows of same application
 
 ;;;;;;;; Program launch shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-#n::Run Notepad
-#c::Run Calc
+#c::Run "Calc"
+#n::Run "Notepad++"

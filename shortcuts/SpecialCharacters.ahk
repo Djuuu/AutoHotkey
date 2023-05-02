@@ -21,42 +21,42 @@
 
 ;; Uppercase accented characters
 
-<^>!+é:: Send É
-<^>!+è:: Send È
-<^>!+ç:: Send Ç
-<^>!+à:: Send À
-<^>!+ù:: Send Ù
+<^>!+é:: Send "É"
+<^>!+è:: Send "È"
+<^>!+ç:: Send "Ç"
+<^>!+à:: Send "À"
+<^>!+ù:: Send "Ù"
 
 ;; Other special characters
 
-<^>!+):: Send ≠
-<^>!+=:: Send ±
+<^>!+):: Send "≠"
+<^>!+=:: Send "±"
 
-<^>!a::  Send æ
-<^>!+a:: Send Æ
-<^>!+e:: Send ¢
-<^>!o::  Send œ
-<^>!+o:: Send Œ
-<^>!^::  Send ˇ
+<^>!a::  Send "æ"
+<^>!+a:: Send "Æ"
+<^>!+e:: Send "¢"
+<^>!o::  Send "œ"
+<^>!+o:: Send "Œ"
+<^>!^::  Send "ˇ"
 
-<^>!+$:: Send ¥
+<^>!+$:: Send "¥"
 
-<^>!s::  Send ß
+<^>!s::  Send "ß"
 
-<^>!+<::  Send ≥
-<^>!<::   Send ≤
-<^>!w::   Send «
-<^>!x::   Send »
-<^>!c::   Send ©
-<^>!+c::  Send ®
-<^>!,::   Send ¿
-<^>!`;::  Send ·
-<^>!+`;:: Send •
-<^>!+,::  Send …
-<^>!!::   Send ¡
+<^>!+<::  Send "≥"
+<^>!<::   Send "≤"
+<^>!w::   Send "«"
+<^>!x::   Send "»"
+<^>!c::   Send "©"
+<^>!+c::  Send "®"
+<^>!,::   Send "¿"
+<^>!`;::  Send "·"
+<^>!+`;:: Send "•"
+<^>!+,::  Send "…"
+<^>!!::   Send "¡"
 
 ; non-breaking space
-<^>!Space::  Send % Chr(160) 
+<^>!Space:: Send Chr(160)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;
