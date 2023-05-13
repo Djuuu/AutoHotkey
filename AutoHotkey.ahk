@@ -33,7 +33,7 @@ Capslock & Tab::moveMouseToOtherMonitor  ;;; {Tab} - Move mouse to other monitor
 Pause::setMonitorSource(AlternateMonitorSource, DisplayToToggle)  ;;; {Pause} - Toggle monitor source
 
 #Include %A_ScriptDir%\scripts\SearchSelection.ahk
-Capslock & ²::searchSelection()  ;;; {²} - Search selected text in Google
+Capslock & s::searchSelection()  ;;; {s} - Search selected text in Google
 
 #Include %A_ScriptDir%\scripts\SwitchApplicationWindow.ahk
 !²::switchApplicationWindow()  ;;; {Alt}{²} - Switch between windows of same application
