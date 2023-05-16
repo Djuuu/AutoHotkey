@@ -18,11 +18,13 @@ Capslock & R::Reload
 #Include %A_ScriptDir%\shortcuts\CurrentDate.ahk        ;;; {DT}        - Current date/time
 #Include %A_ScriptDir%\shortcuts\F13-F24.ahk            ;;; {F1-F12}    - F13-F24
 #Include %A_ScriptDir%\shortcuts\QwertyBits.ahk         ;;; {^$ù*}      - QWERTY bits (brackets, braces)
-#Include %A_ScriptDir%\shortcuts\Symbols.ahk            ;;; {wxcvhgmny} - Symbols ⚠️ ❌ ✔️ ⏳ 🎸 🎶 🎵 ¯\_(ツ)_/¯
+#Include %A_ScriptDir%\shortcuts\Symbols-Teams.ahk      ;;; {wxcvhgmny} - Symbols ⚠️ ❌✔️ ⏳ 🎸 🎶🎵 (ツ) (MS Teams)
+#Include %A_ScriptDir%\shortcuts\Symbols.ahk            ;;; {wxcvhgmny} - Symbols ⚠️ ❌✔️ ⏳ 🎸 🎶🎵 (ツ)
 
 ;;;;;;;; Program shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\programs\FancyZones.ahk
 #Include %A_ScriptDir%\programs\LeDimmer.ahk
+#Include %A_ScriptDir%\programs\MSTeams.ahk
 #Include %A_ScriptDir%\programs\PhpStorm.ahk
 
 ;;;;;;;; Scripts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
