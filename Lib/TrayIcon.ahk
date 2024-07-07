@@ -80,6 +80,9 @@ TrayIcon_GetInfo(sExeName := "") {
         sProcess := WinGetProcessName("ahk_id " hWnd)
         sClass   := WinGetClass("ahk_id " hWnd)
       } catch TargetError as err {
+        ;MsgBox(type(err) " in " err.What ", which was called at line " err.Line)
+      } catch OSError as err {
+        ;MsgBox(type(err) " in " err.What ", which was called at line " err.Line)
       }
 
       if not sExeName or sExeName == sProcess or sExeName == nPid {
