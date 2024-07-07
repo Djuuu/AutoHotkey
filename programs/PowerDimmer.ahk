@@ -1,18 +1,18 @@
-;;;;;;;;;;;;;;; LeDimmer - focus ;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; PowerDimmer - focus ;;;;;;;;;;;;;;;
 
 #Include <TrayIcon>  ;;; Tray icon management library
 
 Capslock & f::
 {
 	if (!GetKeyState("Shift", "P")) {
-		Run A_ProgramFiles . "\LeDimmer\LeDimmer.exe -alpha 225 -hideOnDesktop"
 		Send "#{Home}"
+		Run A_AppData . "\PowerDimmer\PowerDimmer.exe", A_AppData . "\PowerDimmer"
 	} else {
 		; Remove tray icon (before closing parent process)
-	    for value in TrayIcon_GetInfo("LeDimmer.exe") {
+	    for value in TrayIcon_GetInfo("PowerDimmer.exe") {
 			TrayIcon_Remove(value['hwnd'], value['uid'])
 	    }
 
-		ProcessClose "LeDimmer.exe"
+		ProcessClose "PowerDimmer.exe"
 	}
 }

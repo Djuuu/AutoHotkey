@@ -23,7 +23,7 @@ Capslock & R::Reload
 
 ;;;;;;;; Program shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\programs\FancyZones.ahk
-#Include %A_ScriptDir%\programs\LeDimmer.ahk
+#Include %A_ScriptDir%\programs\PowerDimmer.ahk
 #Include %A_ScriptDir%\programs\MSTeams.ahk
 #Include %A_ScriptDir%\programs\PhpStorm.ahk
 
