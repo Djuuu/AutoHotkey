@@ -4,6 +4,11 @@
 
 Capslock & f::
 {
+	if (! FileExist(A_AppData . "\PowerDimmer\PowerDimmer.exe")) {
+		MsgBox "PowerDimmer.exe not found"
+		return
+	}
+
 	if (!GetKeyState("Shift", "P")) {
 		Send "#{Home}"
 		Run A_AppData . "\PowerDimmer\PowerDimmer.exe", A_AppData . "\PowerDimmer"
