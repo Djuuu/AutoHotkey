@@ -1,9 +1,11 @@
 ;;;;;;;;;;;;;;; MS Teams shortcuts ;;;;;;;;;;;;;;;;;;;;;;;
 
 msTeamsMute() {
-	if WinExist("ahk_exe Teams.exe") {
+	if (WinExist("ahk_exe ms-teams.exe")) {
 		WinActivate ; Use the window found by WinExist.
 		Send "^+M" ; Mute/Unmute (Ctrl + Shift + M)
+	} else {
+		MsgBox "MS Teams window not found"
 	}
 }
 
