@@ -9,9 +9,9 @@ Capslock & f::
 		Run A_AppData . "\PowerDimmer\PowerDimmer.exe", A_AppData . "\PowerDimmer"
 	} else {
 		; Remove tray icon (before closing parent process)
-	    for value in TrayIcon_GetInfo("PowerDimmer.exe") {
+		for value in TrayIcon_GetInfo("PowerDimmer.exe") {
 			TrayIcon_Remove(value['hwnd'], value['uid'])
-	    }
+		}
 
 		ProcessClose "PowerDimmer.exe"
 	}

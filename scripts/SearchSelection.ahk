@@ -17,8 +17,8 @@ copySelection() {
 	Send "^c"
 	BlockInput "Off"
 	if !ClipWait(1) {
-        return prevClipboard
-    }
+		return prevClipboard
+	}
 
 	selection := A_Clipboard
 	A_Clipboard := prevClipboard

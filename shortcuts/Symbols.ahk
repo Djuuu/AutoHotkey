@@ -48,12 +48,12 @@ Capslock & l::Send "🔍"
 Capslock & ,::Send "❓"
 Capslock & !::Send "❗"
 #HotIf GetKeyState("Shift", "P")
-    Capslock & ,::Send "❔"
-    Capslock & !::Send "❕"
+	Capslock & ,::Send "❔"
+	Capslock & !::Send "❕"
 #HotIf
 #HotIf GetKeyState("Alt", "P")
-    Capslock & ,::Send "⁉️"
-    Capslock & !::Send "‼️"
+	Capslock & ,::Send "⁉️"
+	Capslock & !::Send "‼️"
 #HotIf
 
 Capslock & g::Send "🎸"
