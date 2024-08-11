@@ -40,6 +40,13 @@ Capslock & s::searchSelection()  ;;; {s} - Search selected text in Google
 #Include %A_ScriptDir%\scripts\SwitchApplicationWindow.ahk
 !²::switchApplicationWindow()  ;;; {Alt}{²} - Switch between windows of same application
 
+; Load bash aliases
+if (IsSet(bashAliasesUrl)) {
+#HotIf IsSet(bashAliasesUrl)
+	Capslock & z::Send "a=" . bashAliasesUrl . "; source <([ -x `"$(command -v curl)`" ] && curl -sL $a || wget -qO - $a)"
+#HotIf
+}
+
 ;;;;;;;; Program launch shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #c::Run "Calc"
 #n::Run "Notepad++"
