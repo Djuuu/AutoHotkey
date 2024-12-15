@@ -12,7 +12,6 @@ MsTeamsWIndowName := "ahk_exe ms-teams.exe"
 	Capslock & w::Send "(warning)"          ; ⚠️
 	Capslock & c::Send "(constructionsign)" ; 🚧
 
-
 	Capslock & x::Send "(crossmark)"       ; ❌
 	Capslock & v::Send "(checkmarkbutton)" ; ✅
 #HotIf
