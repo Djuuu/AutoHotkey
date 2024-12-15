@@ -42,8 +42,11 @@ Capslock & s::searchSelection()  ;;; {s} - Search selected text in Google
 
 ; Load bash aliases
 if (IsSet(bashAliasesUrl)) {
+#HotIf IsSet(bashAliasesUrl) and GetKeyState("Alt", "P")
+	Capslock & z::Send "a=" . bashAliasesUrl . "; . /dev/fd/3 3<<-EOF{Enter}$({{} curl -sL $a || wget -qO - $a;{}} 2>/dev/null){Enter}EOF{Enter}"
+#HotIf
 #HotIf IsSet(bashAliasesUrl)
-	Capslock & z::Send "a=" . bashAliasesUrl . "; source <([ -x `"$(command -v curl)`" ] && curl -sL $a || wget -qO - $a)"
+	Capslock & z::Send "a=" . bashAliasesUrl . "; . <({{} curl -sL $a || wget -qO - $a;{}} 2>/dev/null){Enter}"
 #HotIf
 }
 

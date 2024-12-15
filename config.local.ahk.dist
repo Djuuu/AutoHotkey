@@ -17,4 +17,4 @@ defaultSearchUrl := "https://duckduckgo.com/?q="
 ;defaultSearchUrl := "https://www.qwant.com/?q="
 
 ;;; Bash aliases URL
-;bashAliasesUrl := "https://tardot.dev/.bash_aliases"
+;bashAliasesUrl := "https://tardot.dev/sh"
