@@ -4,6 +4,7 @@
 ;;;;;;;; Back (F20) ;;;;;;;;;;;;
 
   F20::Send "^+{F12}"      ;;; Default      ->  Hide all tool windows
+ ^F20::Send "^y"           ;;; Control      ->  Delete line
 ^!F20::Send "^!l"          ;;; Control+Alt  ->  Reformat code
  !F20::Send "{Left}" "!l"  ;;; Alt          ->  (move left and) Align carets
 
