@@ -7,7 +7,9 @@ MsTeamsWIndowName := "ahk_exe ms-teams.exe"
 	Capslock & v::Send "(checkmark)"       ; ✔️
 #HotIf
 #HotIf WinActive(MsTeamsWIndowName)
-	Capslock & a::Send "(atom)"            ; ⚛️
+	;Capslock & a::Send "(atom)"            ; ⚛️
+
+	;Capslock & r::Send "(rocket)"          ; 🚀
 
 	Capslock & w::Send "(warning)"          ; ⚠️
 	Capslock & c::Send "(constructionsign)" ; 🚧

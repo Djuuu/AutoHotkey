@@ -7,7 +7,9 @@ SetCapsLockState "AlwaysOff"
 SetNumLockState "AlwaysOn"
 
 ;;;;;;;; AutoHotkey reload ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-Capslock & R::Reload
+#HotIf GetKeyState("Ctrl", "P")
+	Capslock & r::Reload
+#HotIf
 
 ;;;;;;;; Configuration ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\config.local.ahk

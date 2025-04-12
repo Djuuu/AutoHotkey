@@ -2,6 +2,8 @@
 
 Capslock & a::Send "⚛️"
 
+Capslock & r::Send "🚀"
+
 Capslock & w::Send "⚠️"
 Capslock & c::Send "🚧"
 
