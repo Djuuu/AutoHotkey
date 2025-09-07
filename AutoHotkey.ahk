@@ -28,6 +28,7 @@ SetNumLockState "AlwaysOn"
 #Include %A_ScriptDir%\programs\PowerDimmer.ahk
 #Include %A_ScriptDir%\programs\MSTeams.ahk
 #Include %A_ScriptDir%\programs\PhpStorm.ahk
+#Include %A_ScriptDir%\programs\Terminal.ahk
 
 ;;;;;;;; Scripts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\scripts\MoveMouseToOtherMonitor.ahk
