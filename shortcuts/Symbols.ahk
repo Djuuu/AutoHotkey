@@ -6,6 +6,9 @@ Capslock & r::Send "🚀"
 
 Capslock & w::Send "⚠️"
 Capslock & c::Send "🚧"
+#HotIf GetKeyState("Shift", "P")
+	Capslock & c::Send "🛠️"
+#HotIf
 
 Capslock & x::Send "❌"
 Capslock & v::Send "✔️"
