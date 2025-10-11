@@ -1,4 +1,4 @@
-;;;;;;;;;;;;;;; MS Teams shortcuts ;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;; MS Teams shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 msTeamsMute() {
 	if (WinExist("ahk_exe ms-teams.exe")) {

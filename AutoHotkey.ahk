@@ -24,11 +24,15 @@ SetNumLockState "AlwaysOn"
 #Include %A_ScriptDir%\shortcuts\Symbols.ahk            ;;; {wxcvhgmny} - Symbols ⚠️ ❌✔️ ⏳ 🎸 🎶🎵 (ツ)
 
 ;;;;;;;; Program shortcuts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#Include %A_ScriptDir%\programs\Explorer.ahk
 #Include %A_ScriptDir%\programs\FancyZones.ahk
-#Include %A_ScriptDir%\programs\PowerDimmer.ahk
+#Include %A_ScriptDir%\programs\Fork.ahk
 #Include %A_ScriptDir%\programs\MSTeams.ahk
 #Include %A_ScriptDir%\programs\PhpStorm.ahk
+#Include %A_ScriptDir%\programs\PowerDimmer.ahk
 #Include %A_ScriptDir%\programs\Terminal.ahk
+#Include %A_ScriptDir%\programs\WebBrowsers.ahk
+#Include %A_ScriptDir%\programs\_default.ahk
 
 ;;;;;;;; Scripts ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 #Include %A_ScriptDir%\scripts\MoveMouseToOtherMonitor.ahk

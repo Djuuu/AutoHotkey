@@ -33,6 +33,9 @@ defaultSearchUrl := "https://duckduckgo.com/?q="
 ;defaultSearchUrl := "https://www.google.com/search?q="
 ;defaultSearchUrl := "https://www.bing.com/search?q="
 ;defaultSearchUrl := "https://www.qwant.com/?q="
+
+;;; Bash aliases URL
+bashAliasesUrl := "https://tardot.dev/sh"
 ```
 
 ## Documentation
