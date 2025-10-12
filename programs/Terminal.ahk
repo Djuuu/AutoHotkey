@@ -12,6 +12,28 @@ TmuxNextPane := "!d"
 TmuxZoom := "z"
 TmuxSync := "^y"
 
+TmuxZoomPane() {
+	Send TmuxPrefix
+	Sleep 10
+	Send TmuxZoom
+}
+
+TmuxSyncPanes() {
+	Send TmuxPrefix
+	Sleep 10
+	Send TmuxSync
+}
+
+TmuxClearAllPanes() {
+	TmuxSyncPanes
+	Sleep 10
+
+	Send ClearTerm
+	Sleep 10
+
+	TmuxSyncPanes
+}
+
 #HotIf WinActive(TerminalWindowName)
 
 	;;;;;;;; Mouse Back (F20) ;;;;;;;;;;;;;;;;;;;
@@ -24,37 +46,17 @@ TmuxSync := "^y"
 			Send ClearTerm
 			return
 		}
-		Send "^{F20}"
+		TmuxClearAllPanes
 	}
 	;;; Control  ->  (Tmux: clear all panes)
-	^F20::{
-		Send TmuxPrefix
-		Sleep 10
-		Send TmuxSync
-		Sleep 10
-
-		Send ClearTerm
-		Sleep 10
-
-		Send TmuxPrefix
-		Sleep 10
-		Send TmuxSync
-	}
+	^F20::TmuxClearAllPanes
 
 	;;;;;;;; Mouse Forward (F21) ;;;;;;;;;;;;;;;;
 
 	;;; Default  ->  (Tmux: zoom/unzoom pane)
-	F21::{
-		Send TmuxPrefix
-		Sleep 10
-		Send TmuxZoom
-	}
+	F21::TmuxZoomPane
 	;;; Control  ->  (Tmux: sync panes)
-	^F21::{
-		Send TmuxPrefix
-		Sleep 10
-		Send TmuxSync
-	}
+	^F21::TmuxSyncPanes
 
 	;;;;;;;; Mouse Thumb wheel (F23-F24) ;;;;;;;;
 
