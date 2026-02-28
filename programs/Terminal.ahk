@@ -3,6 +3,7 @@
 TerminalWindowName := "ahk_exe WindowsTerminal.exe"
 
 ClearTerm := "^l"
+ClearTermB := "^!l"
 
 TmuxPrefix := "^q"
 TmuxPrevWindow := "!q"
@@ -50,6 +51,8 @@ TmuxClearAllPanes() {
 	}
 	;;; Control  ->  (Tmux: clear all panes)
 	^F20::TmuxClearAllPanes
+	;;; Alt      ->  (clear screen & scrollback buffer)
+	!F20::Send ClearTermB
 
 	;;;;;;;; Mouse Forward (F21) ;;;;;;;;;;;;;;;;
 
