@@ -47,6 +47,13 @@ Capslock & s::searchSelection()  ;;; {s} - Search selected text in Google
 #Include %A_ScriptDir%\scripts\SwitchApplicationWindow.ahk
 !²::switchApplicationWindow()  ;;; {Alt}{²} - Switch between windows of same application
 
+; Open emoji picker
+Capslock & e:: {
+	Run defaultEmojiPickerUrl ?? "https://tardot.dev/emojis/"
+	if WinWait("emoji picker",, 1)
+		WinActivate ; focus emoji picker window
+}
+
 ; Load bash aliases
 if (IsSet(bashAliasesUrl)) {
 #HotIf IsSet(bashAliasesUrl) and GetKeyState("Alt", "P")
